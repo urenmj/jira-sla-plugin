@@ -1,0 +1,879 @@
+<exportservice id="slaservice">
+	<description/>
+	<resource type="i18n" name="i18n"
+			location="com.qxlva.jira.services.sla.labels" />
+	<properties>
+		<property>
+			<key>SLA_SERVICE_USER</key>
+			<name>SLA Service User</name>
+		    <description>Run the SLA Service as the specified user</description>
+			<type>string</type>
+		</property>
+		
+		
+		
+		<property>
+			<key>CLIENT1</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT1_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT1_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT1_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT1_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		<property>
+			<key>CLIENT2</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT2_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT2_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT2_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT2_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		<property>
+			<key>CLIENT3</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT3_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT3_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT3_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT3_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		
+			
+		<property>
+			<key>CLIENT4</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT4_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT4_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT4_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT4_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		<property>
+			<key>CLIENT5</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT5_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT5_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT5_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT5_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+
+
+
+		<property>
+			<key>CLIENT6</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT6_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT6_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT6_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT6_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+
+
+
+		<property>
+			<key>CLIENT7</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT7_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT7_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT7_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT7_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+
+
+
+		<property>
+			<key>CLIENT8</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT8_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT8_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT8_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT8_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+
+
+
+		<property>
+			<key>CLIENT9</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT9_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT9_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT9_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT9_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		
+		<property>
+			<key>CLIENT10</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT10_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT10_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT10_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT10_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		<property>
+			<key>CLIENT11</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT11_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT11_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT11_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT11_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		<property>
+			<key>CLIENT12</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT12_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT12_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT12_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT12_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		<property>
+			<key>CLIENT13</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT13_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT13_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT13_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT13_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		
+			
+		<property>
+			<key>CLIENT14</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT14_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT14_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT14_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT14_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+		
+		
+		
+		<property>
+			<key>CLIENT15</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT15_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT15_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT15_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT15_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+
+
+
+		<property>
+			<key>CLIENT16</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT16_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT16_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT16_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT16_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+
+
+
+		<property>
+			<key>CLIENT17</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT17_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT17_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT17_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT17_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+
+
+
+		<property>
+			<key>CLIENT18</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT18_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT18_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT18_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT18_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>
+
+
+
+		<property>
+			<key>CLIENT19</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT19_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT19_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT19_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT19_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>		
+
+
+
+		<property>
+			<key>CLIENT20</key>
+			<name>Client Name</name>
+		    <description>Client Name. This must match the client name in the security level.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT20_PROJECTS</key>
+			<name>Project Names</name>
+	        <description>Comma separated list of project names that must match the project names in JIRA</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT20_RESP_SLAS</key>
+			<name>Response SLAs</name>
+	        <description>Comma separated list of response SLA periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT20_FIX_KPIS</key>
+			<name>Fix KPIs</name>
+	        <description>Comma separated list of fix KPI periods (P1,P2,P3) in ISO8601 duration format.</description>
+			<type>string</type>
+		</property>
+		<property>
+			<key>CLIENT20_OP_HOURS</key>
+			<name>Operating Hours</name>
+	        <description>The hours that the SLA applies within</description>
+			<type>select</type>
+			<values>
+				<value>
+					<key>OFFICE_HOURS_9_TO_5_30</key>
+					<value>9am - 5:30pm Mon-Fri, excluding Bank Holidays</value>
+				</value>
+				<value>
+					<key>TWENTYFOUR_SEVEN_365</key>
+					<value>24/7 365 days a year</value>
+				</value>
+	        </values>
+		</property>	
+		
+	</properties>
+</exportservice>

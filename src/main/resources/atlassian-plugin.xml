@@ -1,0 +1,98 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}"
+	name="${project.name}" plugins-version="2">
+	<plugin-info>
+		<description>${project.description}</description>
+		<version>${project.version}</version>
+		<vendor name="Quicksilva" url="http://www.qxlva.com"/>
+	</plugin-info>
+
+    <workflow-function key="onhold-function" name="Issue placed on hold"
+		class="com.atlassian.jira.plugin.workflow.WorkflowNoInputPluginFactory">
+		<description>Marks an issue as on hold with a timestamp and updates the elapsed SLA time up until now.</description>
+		<function-class>com.qxlva.jira.workflow.PlaceOnHoldFunction</function-class>
+
+		<orderable>true</orderable>
+		<unique>true</unique>
+		<deletable>true</deletable>
+		<default>false</default>
+	</workflow-function>
+	
+	<workflow-function key="taken-offhold-function" name="Issue taken off hold"
+		class="com.atlassian.jira.plugin.workflow.WorkflowNoInputPluginFactory">
+		<description>Sets the last time the SLA was processed to now so the on hold period is ignored.</description>
+		<function-class>com.qxlva.jira.workflow.TakenOffHoldFunction</function-class>
+
+		<orderable>true</orderable>
+		<unique>true</unique>
+		<deletable>true</deletable>
+		<default>false</default>
+	</workflow-function>
+	
+	<workflow-function key="respond-to-client-function" name="Responded to client"
+		class="com.atlassian.jira.plugin.workflow.WorkflowNoInputPluginFactory">
+		<description>Sets the time at which we responded to the client.</description>
+		<function-class>com.qxlva.jira.workflow.RespondedToClientFunction</function-class>
+
+		<orderable>true</orderable>
+		<unique>true</unique>
+		<deletable>true</deletable>
+		<default>false</default>
+	</workflow-function>
+	
+	<workflow-function key="resolved-issue-function" name="Resolved the issue"
+		class="com.atlassian.jira.plugin.workflow.WorkflowNoInputPluginFactory">
+		<description>Sets the time at which the issue was resolved.</description>
+		<function-class>com.qxlva.jira.workflow.IssueResolvedFunction</function-class>
+
+		<orderable>true</orderable>
+		<unique>true</unique>
+		<deletable>true</deletable>
+		<default>false</default>
+	</workflow-function>
+	
+	<workflow-function key="issue-created-function" name="SLA Issue Created"
+		class="com.atlassian.jira.plugin.workflow.WorkflowNoInputPluginFactory">
+		<description>Dispatches an event if a P1 incident is raised.</description>
+		<function-class>com.qxlva.jira.workflow.IssueRaisedEscalateFunction</function-class>
+
+		<orderable>true</orderable>
+		<unique>true</unique>
+		<deletable>true</deletable>
+		<default>false</default>
+	</workflow-function>
+	
+	<customfield-type key="securitylevel" name="Security Level Searcher"
+        class="com.qxlva.jira.customfield.SecurityLevelCFType">
+        <description>Security Level Searcher plugin</description>
+        <resource type="velocity" name="view" location="templates/plugins/fields/view/view-basictext.vm"/>
+		<resource type="velocity" name="search" location="templates/plugins/fields/edit/edit-basictext.vm"/>
+        <resource type="velocity" name="xml" location="templates/plugins/fields/xml/xml-basictext.vm"/>
+    </customfield-type>
+    
+    <customfield-type key="duration" name="Duration Custom Field"
+        class="com.qxlva.jira.customfield.DurationCFType">
+        <description>Custom field to store durations</description>
+        <resource type="velocity" name="view" location="templates/plugins/fields/view/view-basictext.vm"/>
+		<resource type="velocity" name="search" location="templates/plugins/fields/edit/edit-basictext.vm"/>
+        <resource type="velocity" name="xml" location="templates/plugins/fields/xml/xml-basictext.vm"/>
+    </customfield-type>
+    
+   	<customfield-searcher key="durationsearcher" name="Duration Text Searcher" class="com.atlassian.jira.issue.customfields.searchers.TextSearcher">
+		  <description key="admin.customfield.searcher.durationsearcher.desc">Search on duration</description> 
+		  <description>Search for values using a free text search.</description> 
+		  <resource type="velocity" name="search" location="templates/plugins/fields/edit/edit-basictext.vm" /> 
+		  <resource type="velocity" name="view" location="templates/plugins/fields/view-searcher/view-searcher-basictext.vm" /> 
+		  <resource type="velocity" name="label" location="templates/plugins/fields/view-searcher/label-searcher-basictext.vm" /> 
+		  <valid-customfield-type package="${project.groupId}.${project.artifactId}" key="duration" /> 
+	</customfield-searcher>
+	
+	<customfield-searcher key="textsearcher" name="Text Searcher" class="com.atlassian.jira.issue.customfields.searchers.TextSearcher">
+		  <description key="admin.customfield.searcher.textsearcher.desc">Search on Security Levels</description> 
+		  <description>Search for values using a free text search.</description> 
+		  <resource type="velocity" name="search" location="templates/plugins/fields/edit/edit-basictext.vm" /> 
+		  <resource type="velocity" name="view" location="templates/plugins/fields/view-searcher/view-searcher-basictext.vm" /> 
+		  <resource type="velocity" name="label" location="templates/plugins/fields/view-searcher/label-searcher-basictext.vm" /> 
+		  <valid-customfield-type package="${project.groupId}.${project.artifactId}" key="securitylevel" /> 
+	</customfield-searcher>
+	
+</atlassian-plugin>
