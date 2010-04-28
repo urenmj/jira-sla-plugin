@@ -1,0 +1,13 @@
+#summary How to install and setup the plugin in JIRA
+#labels Featured,Phase-Deploy,Phase-Implementation
+
+= Concepts =
+
+The plugin is designed to process 2 types of SLA.
+
+1. *Customer response SLAs*
+Customer response SLAs define how quickly a help desk should respond to a customer based upon the priority of the issue.
+
+2. *Resolution SLAs*
+Resolution SLAs define how quickly an issue will be resolved within based upon the priority of the issue.
+
