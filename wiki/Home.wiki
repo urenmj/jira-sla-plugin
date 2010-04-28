@@ -1,0 +1,5 @@
+#summary This is the home page for the JIRA SLA Plugin
+
+= Introduction =
+
+The SLA Plugin provides a simple implementation of SLAs in JIRA to allow it to be used in a service delivery/help desk environment. Initially it is not intended to work for everyones situation, but to be used as a start to customise your own setup.
