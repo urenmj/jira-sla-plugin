@@ -56,6 +56,7 @@ import com.atlassian.jira.issue.Issue;
 import com.atlassian.jira.issue.IssueFieldConstants;
 import com.atlassian.jira.issue.IssueManager;
 import com.atlassian.jira.issue.ModifiedValue;
+import com.atlassian.jira.issue.priority.Priority;
 import com.atlassian.jira.issue.fields.CustomField;
 import com.atlassian.jira.issue.fields.config.manager.IssueTypeSchemeManager;
 import com.atlassian.jira.issue.index.IssueIndexManager;
@@ -105,7 +106,7 @@ public class SLAServiceJob extends AbstractService {
 	
 	public static final String SECURITY_LEVEL = "Security Level";
 	public static final String ON_HOLD = "On Hold";
-	public static final String INCIDENT_PRIORITY = "Incident Priority";
+//	public static final String INCIDENT_PRIORITY = "Incident Priority";
 	public static final String TIME_ELAPSED = "Time Elapsed";
 	public static final String FIX_KPI_STATE = "Fix KPI State";
 	public static final String RESPONSE_SLA_STATE = "Response SLA State";
@@ -272,7 +273,7 @@ public class SLAServiceJob extends AbstractService {
 			final CustomField fixSlaState = customFieldManager.getCustomFieldObjectByName(FIX_KPI_STATE);				
 			final CustomField timeElapsed = customFieldManager.getCustomFieldObjectByName(TIME_ELAPSED);				
 			final CustomField onHold = customFieldManager.getCustomFieldObjectByName(ON_HOLD);				
-			final CustomField incidentPriority = customFieldManager.getCustomFieldObjectByName(INCIDENT_PRIORITY);				
+//			final CustomField incidentPriority = customFieldManager.getCustomFieldObjectByName(INCIDENT_PRIORITY);
 
 
 			final Iterator iterator = clientSLAConfigurations.iterator();
@@ -323,7 +324,7 @@ public class SLAServiceJob extends AbstractService {
 						//**
 //						log.debug("Updating SLA fields for issue " + issue.getKey());
 						updateIssueSLAFields(clientSLAConfig, dateResolved, dateResponded, slaLastCalculated, responseSlaState, fixSlaState, timeElapsed,
-								onHold, incidentPriority, issue, user);
+								onHold, issue, user);
 
 					}
 				} catch (SearchException e) {
@@ -339,7 +340,7 @@ public class SLAServiceJob extends AbstractService {
 	/**
 	 * Initialised the ids of the events we will fire
 	 * 
-	 * @param eventTypeIterator
+	 * @param eventTypeManager
 	 */
 	private void initialiseEventTypeIds(final EventTypeManager eventTypeManager) {
 		final Collection eventTypes = eventTypeManager.getEventTypes();
@@ -420,20 +421,10 @@ public class SLAServiceJob extends AbstractService {
 	}
 
 	/**
-	 * @param customer
-	 * @param dateResolved
-	 * @param dateResponded
-	 * @param slaLastCalculated
-	 * @param slaPriority
-	 * @param responseSlaState
-	 * @param fixKPIState
-	 * @param timeElapsed
-	 * @param onHold
-	 * @param issue
 	 */
 	public static void updateIssueSLAFields(final ClientSLAConfig slaConfig, final CustomField dateResolved, final CustomField dateResponded,
 			final CustomField slaLastCalculated, final CustomField responseSlaState, final CustomField fixKPIState, final CustomField timeElapsed,
-			final CustomField onHold, final CustomField incidentPriority, Issue issue, User user) {
+			final CustomField onHold, Issue issue, User user) {
 		final String key = issue.getKey();
 
 		final Timestamp dateResolvedVal = (Timestamp) issue.getCustomFieldValue(dateResolved);
@@ -443,7 +434,8 @@ public class SLAServiceJob extends AbstractService {
 		final String fixKPIStateVal = (String) issue.getCustomFieldValue(fixKPIState);
 		final Period timeElapsedVal = (Period) issue.getCustomFieldValue(timeElapsed);
 		final Timestamp onHoldVal = (Timestamp) issue.getCustomFieldValue(onHold);
-		final String incidentPriorityVal = (String) issue.getCustomFieldValue(incidentPriority);
+        Priority priority = issue.getPriorityObject();
+        final String incidentPriorityVal = priority.getName();
 
 		long responseTime = getResponseSLAInMillis(slaConfig, incidentPriorityVal);
 		long fixTime = getFixKPIInMillis(slaConfig, incidentPriorityVal);
@@ -582,8 +574,8 @@ public class SLAServiceJob extends AbstractService {
 	 * @param issueManager
 	 */
 	public static void dispatchEvent(Issue issue, User user, final IssueManager issueManager, final CustomFieldManager customFieldManager, Long eventId) {
-		final CustomField incidentPriority = customFieldManager.getCustomFieldObjectByName(INCIDENT_PRIORITY);				
-		final String incidentPriorityVal = (String) issue.getCustomFieldValue(incidentPriority);
+        Priority priority = issue.getPriorityObject();
+        final String incidentPriorityVal = priority.getName();
 		
 		final boolean isP1 = incidentPriorityVal.startsWith(PRIORITY_1);
 		final boolean isP2 = incidentPriorityVal.startsWith(PRIORITY_2);

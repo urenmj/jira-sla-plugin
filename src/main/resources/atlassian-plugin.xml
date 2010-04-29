@@ -77,7 +77,7 @@
         <resource type="velocity" name="xml" location="templates/plugins/fields/xml/xml-basictext.vm"/>
     </customfield-type>
     
-   	<customfield-searcher key="durationsearcher" name="Duration Text Searcher" class="com.atlassian.jira.issue.customfields.searchers.TextSearcher">
+   	<customfield-searcher key="durationsearcher" name="Duration Text Searcher" class="com.qxlva.jira.customfield.searchers.NewTextSearcher">
 		  <description key="admin.customfield.searcher.durationsearcher.desc">Search on duration</description> 
 		  <description>Search for values using a free text search.</description> 
 		  <resource type="velocity" name="search" location="templates/plugins/fields/edit/edit-basictext.vm" /> 
@@ -86,7 +86,7 @@
 		  <valid-customfield-type package="${project.groupId}.${project.artifactId}" key="duration" /> 
 	</customfield-searcher>
 	
-	<customfield-searcher key="textsearcher" name="Text Searcher" class="com.atlassian.jira.issue.customfields.searchers.TextSearcher">
+	<customfield-searcher key="textsearcher" name="Text Searcher" class="com.qxlva.jira.customfield.searchers.NewTextSearcher">
 		  <description key="admin.customfield.searcher.textsearcher.desc">Search on Security Levels</description> 
 		  <description>Search for values using a free text search.</description> 
 		  <resource type="velocity" name="search" location="templates/plugins/fields/edit/edit-basictext.vm" /> 
