@@ -11,3 +11,6 @@ Customer response SLAs define how quickly a help desk should respond to a custom
 2. *Resolution SLAs*
 Resolution SLAs define how quickly an issue will be resolved within based upon the priority of the issue.
 
+= Setting up the workflow =
+
+[http://docs.google.com/drawings/pub?id=1Ba9012JRWGIFaAWC6YMHfmKl4xjNhLLrwYgYS_aFvUc&w=944&h=733 Workflow Diagram Example]
