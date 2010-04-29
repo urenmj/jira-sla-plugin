@@ -72,7 +72,6 @@ public class IssueResolvedFunction implements FunctionProvider {
 		final CustomField fixSlaState = customFieldManager.getCustomFieldObjectByName(SLAServiceJob.FIX_KPI_STATE);				
 		final CustomField timeElapsed = customFieldManager.getCustomFieldObjectByName(SLAServiceJob.TIME_ELAPSED);				
 		final CustomField onHold = customFieldManager.getCustomFieldObjectByName(SLAServiceJob.ON_HOLD);				
-		final CustomField incidentPriority = customFieldManager.getCustomFieldObjectByName(SLAServiceJob.INCIDENT_PRIORITY);				
 
 		
 		final Project project = mIssue.getProjectObject();
@@ -91,7 +90,7 @@ public class IssueResolvedFunction implements FunctionProvider {
 	
 			SLAServiceJob.updateIssueSLAFields(clientSLAConfiguration, dateResolved, dateResponded,
 					slaLastCalculated, responseSlaState,
-					fixSlaState, timeElapsed, onHold, incidentPriority, mIssue, user);
+					fixSlaState, timeElapsed, onHold, mIssue, user);
 		}		
 		final Object dateResolvedVal = mIssue.getCustomFieldValue(dateResolved);
 		dateResolved.updateValue(null, mIssue, new ModifiedValue(dateResolvedVal, new Timestamp(System.currentTimeMillis())), new DefaultIssueChangeHolder());

@@ -9,7 +9,13 @@ SLA Service Installation
 	Priority 2 - Severe Limitation
 	Priority 3 - Slight Limitation
 
+	
+
 3. Create any new Statuses for issues, for example On Hold
+
+
+
+
 
 4. Create a workflow and on the relevant transitions add post functions. e.g.
 
@@ -123,6 +129,7 @@ SLA Service Installation
 
 16. Configure custom fields "Response SLA State" and "Fix KPI State" with values: OK, WARN, BREACHED. Default OK
 
+
 17. Create a user for the SLA service with full permissions. e.g. slaservice
 
 18. Re Index JIRA
@@ -134,9 +141,10 @@ SLA Service Installation
 
 	Configure the clients as required
 
-
-
-
-
-
+	
+TODO
+1. Add instructions to configure security levels
+http://confluence.atlassian.com/display/JIRA/Configuring+Issue+Level+Security
+Create a security scheme, including a security level for each client
+Apply the security scheme to the project
 

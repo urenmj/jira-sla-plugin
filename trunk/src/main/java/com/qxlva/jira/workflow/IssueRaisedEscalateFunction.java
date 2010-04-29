@@ -64,12 +64,10 @@ public class IssueRaisedEscalateFunction implements FunctionProvider {
 		
 		ComponentManager componentManager = ComponentManager.getInstance();
 		final CustomFieldManager customFieldManager = componentManager.getCustomFieldManager();
-		final CustomField incidentPriority = customFieldManager.getCustomFieldObjectByName(SLAServiceJob.INCIDENT_PRIORITY);				
-		final String incidentPriorityVal = (String) mIssue.getCustomFieldValue(incidentPriority);
-		
-//		final Priority priorityObject = mIssue.getPriorityObject();
-////		final String name = priorityObject.getName();
-		if (incidentPriorityVal != null && incidentPriorityVal.startsWith(SLAServiceJob.PRIORITY_1))
+
+		final Priority priorityObject = mIssue.getPriorityObject();
+		final String name = priorityObject.getName();
+		if (name != null && name.startsWith(SLAServiceJob.PRIORITY_1))
 		{
 			final Project project = mIssue.getProjectObject();
 			final GenericValue securityLevel = mIssue.getSecurityLevel();
