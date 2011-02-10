@@ -21,6 +21,12 @@ At the time of writing this was version 3.0.6. This is also attached to this pag
 3. Add the SDK bin directory to your path. For example add C:\Atlassian\atlassian-plugin-sdk-3.0.6\bin to your path.
 4. At the command prompt within the plugin's project directory execute "atlas-run" to compile the plugin and run a test instance of JIRA at [http://localhost:1990/jira/]
 
+You can get a direct download of the SDK version used in these instructions here:
+
+https://maven.atlassian.com/public/com/atlassian/amps/atlassian-plugin-sdk/3.0.6/atlassian-plugin-sdk-3.0.6.zip
+
+Release notes: http://confluence.atlassian.com/display/DEVNET/Atlassian+Plugin+SDK+3.0.6+Release+Notes
+
 
 Deploying the plugin...
 1. Stop JIRA
